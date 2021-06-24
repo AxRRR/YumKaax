@@ -1,0 +1,64 @@
+.Yumkaax_FoodBox {
+    /* background-color: blanchedalmond; */
+    width: 80%;
+    height: auto;
+    margin-left: 4rem;
+    padding: 5rem;
+    display: flex;
+}
+
+.Yumkaax_FoodList {
+    list-style: none;
+    float: left;
+    background-color: rgb(255, 253, 253);
+    margin-right: 2rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    width: 18rem;
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0.2px 0.2px 1px 1px rgb(0, 0, 0, 0.2);
+}
+
+.Yumkaax_FoodList:hover {
+    transform: scale(1.1); 
+    /* transition: cubic-bezier(0.1, 0.2, 0.165, 0.2); */
+    transition-duration: 10ms;
+    /* transform-style: flat; */
+}
+
+.Yumkaax_FoodPicture {
+    width: 18rem;
+}
+
+.Yumkaax_FoodDescription {
+    font-size: 20px;
+}
+
+.Yumkaax_FoodSaucer {
+    font-size: 30px;
+}
+
+.Yumkaax_FoodAmount {
+    font-size: 30px;
+    float: bottom;
+}
+
+.Yumkaax_FoodCount {
+    font-size: 18px;
+    float: bottom;
+}
+
+/* .Yumkaax_FoodInput {
+    width: 2rem;
+    height: 1rem;
+    margin-bottom: 1rem;
+} */
+
+.Yumkaax_FoodButton {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    width: 18rem;
+    height: 2.5rem;
+    border-radius: 0.3rem;
+}
