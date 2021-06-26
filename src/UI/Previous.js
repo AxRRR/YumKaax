@@ -1,7 +1,8 @@
-import React, { Fragment } from "react";
+import React from "react";
 import classes from "./Previous.module.css";
 
 export const Previous = (id) => {
+
   return (
     <div className={classes.backdrop}>
       <div className={classes.Box}>
@@ -18,7 +19,7 @@ export const Previous = (id) => {
             salsas(roja y verde) pepinos, rábanos y cebolla
           </p>
           <p className={classes.Precio}>$149.00 MXN</p>
-          <input type="text" onFocus="4" className={classes.input} />
+          <input type="text" value="4" className={classes.input} />
           <button className={classes.OrderButton}>Ordenar ahora</button>
           <button className={classes.AddButton}>Agregar a mi lista</button>
         </div>

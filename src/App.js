@@ -2,7 +2,6 @@ import React, { Fragment, useState } from 'react';
 import { Home } from './Home/Home';
 import { Navbar } from './Layout/Navbar';
 import Login from './UI/Login';
-import { Previous } from './UI/Previous';
 
 function App() {
 const [showModal, setShowModal] = useState(false);
@@ -19,7 +18,6 @@ const hideModalHandler = () => {
         {showModal && <Login onClose={hideModalHandler} />}
         <Navbar onShowModal={showModalHandler} /> 
         <Home />
-        <Previous />
     </Fragment>
   );
 

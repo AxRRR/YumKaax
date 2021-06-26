@@ -1,0 +1,100 @@
+.CartBox {
+    position: fixed;
+    top: 0rem;
+    left: 68%;
+    width: 30%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    z-index: 30;
+}
+
+.Cart_BoxItem {
+    border-radius: 0.5rem;
+    width: 35rem;
+    height: 7rem;
+    display: flex;
+}
+
+.Cart_Picture {
+    width: 10rem;
+    height: 7rem;
+    border-radius: 0.5rem;
+}
+
+.Cart_Saucer {
+    font-weight: bolder;
+    font-weight: 500;
+    padding: 0.5rem;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.Cart_Amount {
+    font-weight: bolder;
+    font-weight: 600;
+    text-align: left;
+    padding: 0.5rem;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.Cart_Description {
+    padding: 0.5rem;
+    color: rgb(0, 0, 0);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.Cart_Tittle {
+    font-size: 18px;
+    padding: 0.5rem;
+    color: rgb(0, 0, 0);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.Cart_DeleteItem {
+    font-size: 18px;
+    color: rgb(6, 69, 173);
+}
+
+.Cart_ButtonPay {
+    font-weight: bolder;
+    font-weight: 600;
+    float: right;
+    width: 17.3rem;
+    height: 3.5rem;
+    background-color: #5cb85c;
+    border-radius: 0.5rem;
+    font-size: 17px;
+    border-color: white;
+    color: white;
+}
+
+.Cart_ButtonClean {
+    font-weight: bolder;
+    font-weight: 600;
+    float: right;
+    width: 17.3rem;
+    height: 3.5rem;
+    background-color: #d9534f;
+    border-radius: 0.5rem;
+    font-size: 17px;
+    border-color: white;
+    color: white;
+}
+
+.Cart_SubTotal {
+    font-weight: bolder;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    text-align: right;
+}
+.Cart_BoxAllItems {
+    height: 45em;
+}

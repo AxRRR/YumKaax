@@ -1,10 +1,12 @@
-import React from "react";
-import { Previous } from "../UI/Previous";
+import React, { useState } from "react";
+import { Cart } from "../UI/Cart";
 import classes from "./Home.module.css";
 
 export const Home = (props) => {
-  const [food, setFood] = React.useState([]);
-  
+  const [food, setFood] = useState([]);
+  const [previous, setPrevious] = useState([]);
+  //const [id, setId] = useState([]);
+
   React.useEffect(() => {
     FoodList();
   }, []);
@@ -15,17 +17,13 @@ export const Home = (props) => {
     setFood(foods);
   };
 
-  const setFoodPrevious = (id, saucer, amount) => {
-    let informacion = ({
-        id, 
-        saucer, 
-        amount
-    });
-    return Previous(informacion);
-  }
+  const setFoodPrevious = (menu) => {
+    setPrevious(menu)
+  } 
 
   return (
     <div>
+      <Cart onPassId={previous} />
       <ul className={classes.Yumkaax_FoodBox}>
         <div>
           <h1>Menú de comida:</h1>
@@ -42,12 +40,14 @@ export const Home = (props) => {
               </p>
               <p className={classes.Yumkaax_FoodAmount}>${foods.amount}</p>
               <button className={classes.Yumkaax_FoodButton}
-              onClick={() => setFoodPrevious(
-                foods.id,
-                foods.saucer,
-                foods.amount,
-              )}>
-                Descripcion completa
+              onClick={ () => setFoodPrevious({
+                id: foods.id,
+                picture: foods.picture,
+                description: foods.description,
+                saucer: foods.saucer,
+                amount: foods.amount
+                })}>
+                Agregar pedido
               </button>
             </li>
           ))}

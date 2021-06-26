@@ -23,6 +23,8 @@ const Modal = (props) => {
         <ModalContent>{props.children}</ModalContent>,
         portalElement
         )}
+        <Backdrop onClose={props.onClose} />
+        <ModalContent>{props.children}</ModalContent>
     </Fragment>
 };
 
