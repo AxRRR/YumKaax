@@ -1,13 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Cart } from "../UI/Cart";
 import classes from "./Home.module.css";
 
-export const Home = (props) => {
+export const Home = () => {
   const [food, setFood] = useState([]);
-  const [previous, setPrevious] = useState([]);
-  //const [id, setId] = useState([]);
+  const [previous, setPrevious] = useState(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     FoodList();
   }, []);
 
@@ -18,12 +17,23 @@ export const Home = (props) => {
   };
 
   const setFoodPrevious = (menu) => {
-    setPrevious(menu)
+    if(previous === null) {
+      setPrevious([ 
+        menu, 
+      ])
+      }
+      else {
+        setPrevious([
+          ...previous, 
+          menu, 
+        ])
+      }
+      console.log(previous)
   } 
 
   return (
     <div>
-      <Cart onPassId={previous} />
+    {previous !== null && <Cart previous={previous} /> }
       <ul className={classes.Yumkaax_FoodBox}>
         <div>
           <h1>Menú de comida:</h1>
