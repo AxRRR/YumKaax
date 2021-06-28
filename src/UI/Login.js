@@ -1,5 +1,5 @@
 import React from "react";
-import Modal from "./Modal";
+import Modal from "./Modals/Modal";
 import classes from "./Login.module.css";
 
 const Login = (props) => {
