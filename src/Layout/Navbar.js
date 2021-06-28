@@ -3,8 +3,10 @@ import classes from "./Navbar.module.css";
 import Logo from '../assets/YumKaaxTaco.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import { Cart } from "../UI/Cart/Cart";
 
 export const Navbar = (props) => {
+  console.log(props.onVisibility)
   return (
     <div className={classes.YumKaax_Navbarbox}>
       <ul className={classes.YumKaax_Navbarlist}>
@@ -24,6 +26,7 @@ export const Navbar = (props) => {
         </li>
         <li>
         <FontAwesomeIcon icon={faShoppingCart} 
+          onClick={() => Cart(props.onVisibility)}
           className={classes.YumKaax_NavbarCart} 
          />
         </li>
