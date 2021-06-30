@@ -3,8 +3,12 @@
     src: url('../assets/Fonts/AlfaSlabOne-Regular.ttf');
 }
 
+body {
+    background-color: rgb(243, 240, 236);
+}
+
 .Yumkaax_FoodBox {
-    /* background-color: blanchedalmond; */
+    background-color: white;
     width: 60%;
     height: auto;
     margin-left: auto;
@@ -20,8 +24,8 @@
     margin-right: 2rem;
     padding: 1rem;
     margin-bottom: 2rem;
-    width: 30rem;
-    height: 8rem;
+    width: 45rem;
+    height: 10rem;
     border-radius: 0.5rem;
 }
 
@@ -33,14 +37,12 @@
 
 .Yumkaax_FoodList:hover {
     transform: scale(1.1); 
-    /* transition: cubic-bezier(0.1, 0.2, 0.165, 0.2); */
     transition-duration: 10ms;
-    /* transform-style: flat; */
 }
 
 .Yumkaax_FoodPicture {
-    width: 7rem;
-    height: 5rem;
+    width: 12rem;
+    height: 9rem;
     margin-right: 1rem;
     border-radius: 1rem;
 }

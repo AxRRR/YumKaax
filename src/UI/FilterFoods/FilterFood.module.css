@@ -1,0 +1,44 @@
+.Filter_Main {
+    float: right;
+    width: 20rem;
+    height: auto;
+    padding: 1rem;
+    padding-right: 3rem;
+}
+
+.Filter_MainList {
+    list-style: none;
+    float: left;
+}
+
+.Filter_Tittle {
+    color: rgb(104, 104, 104);
+    font-size: 21px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.Filter_Input {
+    background-color: rgb(255, 255, 255);
+    border-radius: 0.4rem;
+    border-color: rgb(105, 1, 190, 0.3);
+    float: left;
+    width: 15rem;
+    height: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.Filter_Item {
+    font-size: 22px;
+    text-align: left;
+    padding: 0rem;
+    margin-left: -2rem;
+    margin-top: 0.3rem;
+}
+
+.Filter_Item:hover {
+    border-radius: 0.5rem;
+    background-color: rgb(105, 1, 190, 0.1);
+    color: rgb(105, 1, 190);
+    width: 15rem;
+    height: 2rem;
+}

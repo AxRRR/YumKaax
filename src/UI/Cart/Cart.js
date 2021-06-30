@@ -1,59 +1,50 @@
-import React, { useEffect, useReducer } from "react";
-import { cartReducer } from "../../components/Reducers/cartReducer";
-import { Home } from "../../Home/Home";
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { cleanCartList, deleteRowCart } from "../../actions/cart";
 import classes from "./Cart.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronCircleLeft } from "@fortawesome/free-solid-svg-icons";
 
-export const Cart = ({ onVisibility }) => {
-  const [itemsCart, dispatch] = useReducer(cartReducer, []);
+export const Cart = (props) => {
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state.cart);
+  const [price, SetPrice] = useState(0);
+  // localStorage.setItem("state", JSON.stringify(state));
 
   useEffect(() => {
-    localStorage.setItem("itemsCart", JSON.stringify(itemsCart));
-  }, [itemsCart]);
-
-  const handleAddItemCart = (GetDataList) => {
-    dispatch({
-      type: "add",
-      payload: GetDataList,
-    });
-  };
+    
+  }, [state]);
 
   const handleDeleteRowCart = (GetRowToDelete) => {
-    dispatch({
-      type: "delete",
-      payload: GetRowToDelete,
-    });
+    dispatch(deleteRowCart(GetRowToDelete));
   };
 
   const handleDeleteAllCart = () => {
-    dispatch({
-      type: "deleteall",
-    });
+    dispatch(cleanCartList());
   };
-
-  // const handleTotalPriceCart = () => {
-  //   dispatch({
-  //     type: 'totalprice'
-  //   })
-  // }
 
   return (
     <div>
-      <Home handleAddItemCart={handleAddItemCart} />
       <div className={classes.backdrop2}>
-        <div style={{visibility: onVisibility}} className={classes.CartBox}>
-          {itemsCart.length >= 1 ? (
+        <div className={classes.CartBox}>
+          {state.length >= 1 ? (
             <h1 className={classes.Cart_Tittle}>
-              Carrito de compras (número de articulos: {itemsCart.length} )
+              Carrito de compras (número de articulos: {state.length} )
             </h1>
           ) : (
             <h1 className={classes.Cart_Tittle}>¡Carrito de compras vacío!</h1>
           )}
           <div className={classes.Cart_BoxAllItems}>
             <ul>
-              {itemsCart.length >= 1 ? (
-                itemsCart.map((item) => (
+              {state.length >= 1 ? (
+                state.map((item) => (
                   <li key={item.id} className={classes.Cart_List}>
                     <div className={classes.Cart_BoxItem}>
+                      <p
+                        className={classes.Cart_DeleteItem}
+                        onClick={() => handleDeleteRowCart(item.id)}>x
+                      </p>
                       <img
                         src={item.picture}
                         alt={item.picture}
@@ -63,17 +54,12 @@ export const Cart = ({ onVisibility }) => {
                       <p className={classes.Cart_Description}>
                         {item.description}
                       </p>
-                      <p className={classes.Cart_Amount}>${item.amount} MXN</p>
-                      <p
-                        className={classes.Cart_DeleteItem}
-                        onClick={() => handleDeleteRowCart(item.id)}
-                      >
-                        Borrar de la lista
-                      </p>
+                      <p className={classes.Cart_Amount}>${item.price} MXN</p>
                     </div>
                   </li>
                 ))
-              ) : (
+              ) 
+              : (
                 <p>
                   No tienes ningún articulo para mostrar en tu Carrito de
                   Compras
@@ -81,14 +67,20 @@ export const Cart = ({ onVisibility }) => {
               )}
             </ul>
           </div>
-          <p className={classes.Cart_SubTotal}>Subtotal: $500.00 MXN</p>
+          <p className={classes.Cart_SubTotal}>Total: $500.00 MXN</p>
           <button className={classes.Cart_ButtonPay}>Realizar pedido</button>
           <button
             className={classes.Cart_ButtonClean}
-            onClick={handleDeleteAllCart}
-          >
+            onClick={handleDeleteAllCart}>
             Limpiar lista
           </button>
+          <div className={classes.Cart_BoxIconReturn}>
+          <FontAwesomeIcon
+            icon={faChevronCircleLeft}
+            className={classes.Cart_IconClose}
+            onClick={props.onCloseCartModal}
+          />
+          </div>
         </div>
       </div>
     </div>

@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { addItemCart } from "../actions/cart";
+import { FilterFood } from "../UI/FilterFoods/FilterFood";
 import classes from "./Home.module.css";
 
-export const Home = ( { handleAddItemCart } ) => {
+export const Home = () => {
   const [food, setFood] = useState([]);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     FoodList();
@@ -13,10 +17,17 @@ export const Home = ( { handleAddItemCart } ) => {
     const foods = await url.json();
     setFood(foods);
   };
+
+  const handleAddItemCartList = (GetDataList) => {
+    dispatch(
+      addItemCart( GetDataList )
+    );
+  }
   
   return (
     <div>
       <ul className={classes.Yumkaax_FoodBox}>
+        <FilterFood />
         <div>
           <h1 className={classes.Yumkaax_FoodTittle}>Tacos disponibles:</h1>
           {food.map((foods) => (
@@ -30,9 +41,9 @@ export const Home = ( { handleAddItemCart } ) => {
               <p className={classes.Yumkaax_FoodDescription}>
                 {foods.description}
               </p>
-              <p className={classes.Yumkaax_FoodAmount}>${foods.amount}</p>
+              <p className={classes.Yumkaax_FoodAmount}>${foods.price}</p>
               <button className={classes.Yumkaax_FoodButton}
-              onClick={ () => handleAddItemCart({
+              onClick={ () => handleAddItemCartList({
                 id: foods.id,
                 picture: foods.picture,
                 description: foods.description,

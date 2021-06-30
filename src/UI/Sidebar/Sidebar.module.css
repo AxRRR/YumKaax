@@ -1,0 +1,123 @@
+@font-face {
+    font-family: 'AlfaSlabOne-Regular';
+    src: url('../../assets/Fonts/AlfaSlabOne-Regular.ttf');
+}
+
+.Sidebar_Box {
+    position: fixed;
+    top: 0rem;
+    left: 0rem;
+    width: 16%;
+    height: 100%;
+    background-color: rgb(27, 0, 47);
+    z-index: 30;
+    animation: slide-right 300ms ease-out forwards;
+  }
+  
+  @keyframes slide-right {
+    from {
+      opacity: 0;
+      transform: translateX(-10rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0rem);
+    }
+  }
+
+hr {
+    border-color: rgb(47, 47, 47);
+}
+
+.Sidebar_ContentBox {
+    height: 50rem;
+    
+}
+
+.Sidebar_List {
+    background-color: rgb(35, 11, 53);
+    list-style: none;
+    float: left;
+    width: 100%;
+    padding: 0rem;
+    padding-bottom: 1.5rem;
+}
+
+
+.Sidebar_Logo {
+    color: white;
+    font-family: 'AlfaSlabOne-Regular';
+    font-size: 30px;
+    font-weight: lighter;
+    padding-left: 1.5rem;
+}
+
+.Sidebar_Icon {
+    color: white;
+    text-align: left;
+    height: 20px;
+    width: 25px;
+    margin-right: 1rem;
+}
+
+.Sidebar_IconClose {
+    color: rgb(132, 3, 172);
+    float: right;
+    font-size: 35px;
+    margin-right: 1rem;
+}
+
+.Sidebar_IconClose:hover {
+    color: rgb(93, 70, 110);
+}
+
+.Sidebar_HeaderBox {
+    padding: 0rem;
+}
+
+.Sidebar_HeaderTittle {
+    color: rgb(206, 204, 204);
+    font-size: 17px;
+    padding-bottom: 0.5rem;
+    padding-top: 1rem;
+    padding-left: 3rem;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.Sidebar_Item {
+    color: rgb(206, 204, 204);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    height: 8px;
+    text-align: center;
+    display: flex;
+    padding-top: 0.5rem;
+    padding-left: 3rem;
+    padding-bottom: 1rem;
+}
+
+.Sidebar_Item:hover {
+    background-color: rgb(57, 2, 98);
+}
+
+.Sidebar_Imagen {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-left: 1rem;
+    border-radius: 50%;
+}
+
+.Sidebar_ProfileBox {
+    display: inline-flex;
+}
+
+.Sidebar_ProfileName {
+    margin-left: 0.5rem;
+    width: 14rem;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}

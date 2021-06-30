@@ -6,11 +6,10 @@
 
 .YumKaax_Navbarbox {
     position: fixed;
-    margin-top: -1rem;
     height: 4rem;
     width: 100%;
-    box-shadow: 2px 2px 2px 1px rgb(0, 0, 0, 0.1);
-    background-color: white;
+    box-shadow: transparent;
+    
 }
 
 .YumKaax_Navbarlist {
@@ -28,8 +27,13 @@
 }
 
 .YumKaax_NavbarCart {
-    float: right;
-    margin-top: 0.3rem;
+    float: left;
+    margin-top: 0rem;
     margin-right: 1rem;
     font-size: 25px;
+}
+
+.YumKaax_NavbarIcon {
+    font-size: 20px;
+    float: left;
 }
