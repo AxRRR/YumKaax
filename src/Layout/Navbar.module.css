@@ -6,10 +6,15 @@
 
 .YumKaax_Navbarbox {
     position: fixed;
+    padding: 0rem;
+    margin-top: -0.5rem;
+    left: 16%;
+  align-items: center;
+  justify-content: center;
     height: 4rem;
-    width: 100%;
-    box-shadow: transparent;
-    
+    width: 68%;
+    border-color: black;
+    background: linear-gradient(20deg, rgb(105, 1, 190), rgb(26, 5, 42));
 }
 
 .YumKaax_Navbarlist {
@@ -20,8 +25,8 @@
     font-size: 15px;
     float: right;
     margin-right: 10rem;
-    background-color: rgb(105, 1, 190);
-    color: white;
+    background-color: rgb(255, 255, 255);
+    color: rgb(105, 1, 190);
     padding: 0.5rem;
     border-radius: 0.7rem;
 }
@@ -35,5 +40,6 @@
 
 .YumKaax_NavbarIcon {
     font-size: 20px;
+    color: white;
     float: left;
 }

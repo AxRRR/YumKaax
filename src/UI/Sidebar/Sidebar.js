@@ -14,12 +14,15 @@ import { faSignInAlt } from "@fortawesome/free-solid-svg-icons";
 import { faCog } from "@fortawesome/free-solid-svg-icons";
 import { faComments } from "@fortawesome/free-solid-svg-icons";
 import { faChevronCircleLeft } from "@fortawesome/free-solid-svg-icons";
+import { useSelector } from "react-redux";
+
 
 export const Sidebar = (props) => {
   const [showCart, SetShowCart] = useState(false);
+  const state = useSelector((state) => state.auth);
 
   useEffect(() => {
-  }, [showCart]);
+  }, [showCart, state]);
 
   const showCartSidebar = () => {
     SetShowCart(true)
@@ -110,12 +113,12 @@ export const Sidebar = (props) => {
         </div>
         <div className={classes.Sidebar_ProfileBox}>
           <img
-            src="https://scontent-qro1-2.xx.fbcdn.net/v/t1.6435-9/106677751_2740385169539821_3421007814769322868_n.jpg?_nc_cat=106&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=cK34vcpsG3QAX8z2Aaf&_nc_ht=scontent-qro1-2.xx&oh=6f6c849a4f665144b562f3ceb2e4afa5&oe=60E060B9"
+            src={state.imageUrl}
             alt="EL axR"
             className={classes.Sidebar_Imagen}
           />
           <p className={classes.Sidebar_ProfileName}>
-            Alex Fabrizio Luna Toledo
+            {state.name}
           </p>
         </div>
         <div>
